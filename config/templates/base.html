@@ -7,25 +7,20 @@
     <head>
         <meta charset="utf-8" />
         <title>
-            {% block title %}
-            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+            {% block title %}PyCon APAC 2025
             {% endblock %}
             {% block title_suffix %}
             {% wagtail_site as current_site %}
             {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
             {% endblock %}
         </title>
-        <link rel="icon" type="image/x-icon" href="{% static 'img/icon/pyconph2024.png' %}">
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="PyCon PH 2024" />
+        <meta property="og:title" content="PyCon APAC 2025" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://pycon.python.ph" />
-        <meta property="og:image" content="https://pycon-2024.python.ph/static/img/landing.png" />
-        <meta name="twitter:title" content="PyCon PH 2024">
+        <meta name="twitter:title" content="PyCon APAC 2025">
         <meta name="twitter:description" content="The Python Conference (PyCon) is a volunteer-run, not-for-profit conference centered around the Python Programming Language.">
-        <meta name="twitter:image" content="https://pycon-2024.python.ph/static/img/landing.png">
-        <meta name="twitter:card" content="summary_large_image">
         
         {# Global stylesheets #}
         {% compress css %}
@@ -39,8 +34,6 @@
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-
-        <script src="{% static 'js/daypilot-all.min.js' %}"></script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
