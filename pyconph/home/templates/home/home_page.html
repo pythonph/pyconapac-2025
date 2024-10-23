@@ -1,47 +1,31 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
-{% block body_class %}bg-blue-1{% endblock %}
+{% block body_class %}{% endblock %}
 {% block content %}
 
-{% include "home/_nav.html" %}
 <main class="">
     <div
-        class="relative w-full min-h-1570 bg-blue bg-img-1 z-0 p-25 flex justify-center items-start"
+        class="relative w-full min-h-1570 bg-img-1 z-0 p-25 flex justify-center items-start"
     >
         <div class="max-w-325 md:max-w-975 pt-70">
-            <p
-                class="uppercase font-firasanscondensed text-white text-16 text-center mb-0 md:mb-20"
-            >
-                Gabay / Guide
-            </p>
-            <p
-                class="text-yellow text-56 font-baybayinsisil text-center md:mb-15"
-            >
-                gbY+
-            </p>
             <div
                 class="logo-shadow flex flex-col items-center max-w-590 block mx-auto"
             >
                 <img
-                    src="{% static 'img/pycon.svg' %}"
+                    src="{% static 'img/apac-2025.svg' %}"
                     alt="Pycon PH 2024"
                     class="w-290 md:w-full mb-25 md:mb-36"
                 />
-                <img
-                    src="{% static 'img/ph-2024.svg' %}"
-                    alt="Pycon PH 2024"
-                    class="mb-25 md:mb-36"
-                />
             </div>
             <div
-                class="flex flex-wrap justify-center gap-15 md:gap-25 mb-36 pt-10"
+                class="flex flex-vertical justify-center gap-15 md:gap-25 mb-36 pt-10"
             >
-                <p class="text-white text-24 text-center mb-10">
-                    {{ page.date }}
-                </p>
-                <p class="text-white text-24 text-center mb-10">
-                    {{ page.location_city }}
-                </p>
+                <div class="text-24 text-center mb-10">
+                    1-2 March 2025
+                </div>
+                <div class="text-24 text-center mb-10">
+                  Ateneo de Manila University, Quezon City, Philippines
+                </div>
             </div>
 
             <div class="flex flex-col md:flex-row justify-center items-center gap-20 mb-30">
@@ -74,140 +58,6 @@
             </div>
 
         </div>
-        <div class="absolute right-1/4 -bottom-90 hidden lg:block">
-            <img
-                class="star"
-                src="{% static 'img/constellation-1.svg' %}"
-                alt="constellation"
-            />
-        </div>
-    </div>
-
-    <!-- What is PyCon? -->
-    <div class="relative pb-150 md:pb-300 overflow-x-hidden overflow-y-hidden">
-        <div class="max-w-975 mx-auto relative px-25 lg:px-0 z-10">
-            <div class="pb-50">
-                {% for content in page.contents.all %}
-                {% include 'home/_content.html' with content=content %}
-                {% if forloop.first %}
-                    <img
-                        class="star"
-                        src="{% static 'img/constellation-2.svg' %}"
-                        alt="constellation"
-                    />
-                {% endif %}
-                {% if content.title == "PyCon Philippines 2024" %}
-                    <div class="flex flex-wrap gap-10 pt-10">
-                        <span
-                            class="font-firasanscondensed text-white bg-blue-2 rounded-full px-11 py-4"
-                            >#gabay</span
-                        >
-                        <span
-                            class="font-firasanscondensed text-18 text-white bg-blue-2 rounded-full px-11 py-4"
-                            >#pyconph2024</span
-                        >
-                        <span
-                            class="font-firasanscondensed text-18 text-white bg-blue-2 rounded-full px-11 py-4"
-                            >#pyconph</span
-                        >
-                        <span
-                            class="font-firasanscondensed text-18 text-white bg-blue-2 rounded-full px-11 py-4"
-                            >#pythonph</span
-                        >
-                    </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-
-        <!-- Photo Collage -->
-        <div
-            class="flex justify-center pt-50 lg:pt-0 lg:absolute -right-90 top-125 z-0"
-        >
-            <div class="flex items-center justify-end gap-20">
-                <div class="w-1/2 flex flex-col gap-20">
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-1.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-2.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-3.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-4.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-5.png' %}"
-                            alt=""
-                        />
-                    </div>
-                </div>
-                <div class="w-1/2 flex flex-col gap-20">
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-6.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-7.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-8.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-9.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-6.png' %}"
-                            alt=""
-                        />
-                    </div>
-                    <div class="md:w-310 max-h-400">
-                        <img
-                            class="fade-in max-w-full max-h-full object-cover"
-                            src="{% static 'img/collage-7.png' %}"
-                            alt=""
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     {% if page.keynote_speakers %}
@@ -218,77 +68,6 @@
         {% include "home/_speakers.html" %}
     {% endif %}
 
-    {% include "home/_schedules.html" %}
-
-    {% include "home/_sponsor_list.html" %}
-
-
-    <div class="relative md:pb-300" id="what-to-expect">
-        <div class="max-w-975 mx-auto px-25 lg:px-0">
-            <p
-                class="font-baybayinsisil text-20 md:text-24 text-yellow"
-            >
-                What to expect this year?
-            </p>
-            <h2 class="font-medium text-48 md:text-80 text-white mb-20">
-                What to expect this year?
-            </h2>
-            <p
-                class="text-18 md:text-32 text-white-80 md:text-white md:mb-0"
-            >
-                We're meeting face-to-face! 🙌
-            </p>
-            <p class="text-18 md:text-32 text-white-80 md:text-white">
-                The conference will be a 2-day in-person event in Manila, Philippines.
-            </p>
-            <div
-                class="flex flex-col md:flex-row border-b border-white-20 pt-30 pb-10"
-            >
-                <div class="w-full md:w-1/3 mb-32">
-                    <p class="text-24 text-yellow mb-0">Activities</p>
-                </div>
-                <div class="w-full md:w-2/3">
-                    <p class="text-white-80 text-16">
-                        There will be talks, workshops, tutorials,
-                        lightning talks, fun group activities, book
-                        giveaways and more!
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row pt-30 pb-10">
-                <div class="w-full md:w-1/3 text-24 text-yellow mb-32">
-                    Content
-                </div>
-                <div class="w-full md:w-2/3">
-                    <ul
-                        class="md:columns-2 list-disc px-20 md:px-40 gap-45"
-                    >
-                        {% for topic in page.content_topics %}
-                        <li
-                            class="text-16 text-white-80 px-10 py-7 break-words topic-bullet"
-                        >
-                            {{ topic }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="absolute left-0 bottom-0 hidden md:block">
-            <img
-                class="star"
-                src="{% static 'img/constellation-3.svg' %}"
-                alt="constellation"
-            />
-        </div>
-        <div class="absolute right-90 bottom-200 hidden md:block">
-            <img
-                class="star"
-                src="{% static 'img/constellation-4.svg' %}"
-                alt="constellation"
-            />
-        </div>
-    </div>
 </main>
 
 {% endblock content %}
