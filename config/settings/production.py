@@ -19,8 +19,18 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 DEBUG = env("DEBUG")
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ["ph.pycon.org", "pycon-2024.python.ph", "pycon.python.ph", "localhost"]
-CSRF_TRUSTED_ORIGINS = ['https://pycon-2024.python.ph', 'https://pycon.python.ph']
+ALLOWED_HOSTS = [
+    "ph.pycon.org",
+    "pycon-2024.python.ph",
+    "pycon.python.ph",
+    "localhost",
+    "pycon-apac.python.ph",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://pycon-2024.python.ph",
+    "https://pycon.python.ph",
+    "https://pycon-apac.python.ph"
+]
 
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
