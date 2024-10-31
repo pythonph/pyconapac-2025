@@ -45,26 +45,13 @@
         <img class="w-full max-w-442" src="{% static 'img/pycon.png' %}" alt="Pycon PH 2024" />
     </div>
     <div class="pb-50">
-        <div class="flex flex-col md:flex-row justify-center items-center gap-20 mb-30">
-            {% if page.ticket_link %}
-                <a href="{{ page.ticket_link }}" class="no-underline text-32 text-yellow-4 uppercase hover:opacity-80">Buy Ticket</a>
-            {% endif %}
-            {% if page.cfp_link %}
-                <a href="{{ page.cfp_link }}" class="no-underline text-32 text-yellow-4 uppercase hover:opacity-80">Become a Speaker</a>
-            {% endif %}
-            {% if not page.cfp_link or not page.ticket_link %}
-                {% if page.sponsor_link %}
-                    <a href="{{ page.sponsor_link }}" class="no-underline text-32 text-white uppercase hover:opacity-80">Become A Sponsor</a>
-                {% endif %}
-            {% endif %}
-        </div>
-        <p class="text-white text-16 text-center max-w-325 mx-auto">
-            Message us at pycon@python.ph for questions and inquiries
-        </p>
-        {% include "socials.html" %}
-        <p class="text-center text-14">
-            This site is built using Django and Wagtail.
-        </p>
+      <p class="text-white text-16 text-center max-w-325 mx-auto">
+          Message us at pycon@python.ph for questions and inquiries
+      </p>
+      {% include "socials.html" %}
+      <p class="text-center text-14">
+          This site is built using Django and Wagtail.
+      </p>
     </div>
     <!-- <script src="{% static 'js/app.js' %}"></script> -->
 </footer>
