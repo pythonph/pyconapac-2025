@@ -18,12 +18,12 @@
                 />
             </div>
             <div
-                class="flex flex-vertical justify-center gap-15 md:gap-25 mb-36 pt-10"
+                class="flex flex-col md:flex-row justify-center gap-15 md:gap-25 mb-36 pt-10"
             >
-                <div class="text-24 text-center mb-10">
+                <div class="text-12 md:text-24 text-center mb-10">
                     1-2 March 2025
                 </div>
-                <div class="text-24 text-center mb-10">
+                <div class="text-12 md:text-24 text-center mb-10">
                   Ateneo de Manila University, Quezon City, Philippines
                 </div>
             </div>
@@ -32,28 +32,26 @@
                 {% if page.ticket_link %}
                 <a
                     href="{{ page.ticket_link }}"
-                    class="no-underline bg-yellow-1 hover:bg-yellow-3 border-yellow-2 font-medium text-blue text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
+                    class="no-underline bg-dark-yellow hover:bg-yellow-3 border-yellow-2 font-medium text-white text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
                 >
-                    Get Tickets
+                  Call for Volunteers
                 </a>
                 {% endif %}
                 {% if page.cfp_link %}
                 <a
                     href="{{ page.cfp_link }}"
-                    class="no-underline bg-yellow-1 hover:bg-yellow-3 border-yellow-2 font-medium text-blue text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
+                    class="no-underline bg-dark-yellow hover:bg-dark-yellow border-yellow-2 font-medium text-white text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
                 >
                     Become a Speaker
                 </a>
                 {% endif %}
-                {% if not page.cfp_link or not page.ticket_link %}
-                    {% if page.sponsor_link %}
-                    <a
-                        href="{{ page.sponsor_link }}"
-                        class="no-underline bg-yellow-1 hover:bg-yellow-3 border-yellow-2 font-medium text-blue text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
-                    >
-                        Become a Sponsor
-                    </a>
-                    {% endif %}
+                {% if page.sponsor_link %}
+                <a
+                    href="{{ page.sponsor_link }}"
+                    class="no-underline bg-dark-yellow hover:bg-yellow-3 border-yellow-2 font-medium text-white text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
+                >
+                    Become a Sponsor
+                </a>
                 {% endif %}
             </div>
 
