@@ -6,7 +6,6 @@ body {
     background: #F7F6E9;
 }
 
-
 p, div {
     color: #235940 !important;
 }
@@ -171,4 +170,8 @@ ul > li {
 
 .burger-icon:hover {
     filter: drop-shadow(2px 2px 8px rgba(255, 255, 0, 0.7));
+}
+
+.social-icon {
+    filter: invert(60%);
 }
