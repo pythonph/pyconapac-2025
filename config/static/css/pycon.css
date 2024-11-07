@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maragsa&display=swap');
+
+@font-face {
+    font-family: 'Maragsa';
+    src: url('../fonts/Maragsa/Maragsa-Display.woff2') format('woff2'),
+         url('../fonts/Maragsa/Maragsa-Display.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
     background: #F7F6E9;
@@ -13,20 +23,31 @@ body {
 }
 
 .bg-img-3 {
-    background-position: bottom !important;
+    background-image: url(../img/bg/bg-3.svg) !important;
+    background-position: 50%;
+    background-size: cover;
 }
 
-.bg-dark-yellow {
-    background-color: #FFA401;
+/* Components */
+
+.separator {
+  border-left: 1px solid #ccc;
+  opacity: 30%;
 }
 
 .social-icon {
     filter: invert(60%);
 }
 
-/* Components */
-.separator {
-  border-left: 1px solid #ccc;
-  opacity: 30%;
+.coc-header {
+    font-family: 'Maragsa', sans-serif;
 }
 
+.coc-subheader {
+    font-family: Noto Sans;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 43.58px;
+    text-align: center;
+}
