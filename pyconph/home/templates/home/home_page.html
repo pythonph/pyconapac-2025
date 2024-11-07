@@ -4,52 +4,39 @@
 {% block content %}
 
 <main class="">
-    <div
-        class="relative w-full min-h-1570 bg-img-1 z-0 p-25 flex justify-center items-start"
-    >
-        <div class="max-w-325 md:max-w-975 pt-70">
-            <div
-                class="logo-shadow flex flex-col items-center max-w-590 block mx-auto"
-            >
+    <div class="w-full bg-img-1 flex justify-center items-start min-h-[1570px]">
+        <div class="pt-[70px]">
+            <div class="logo-shadow flex flex-col items-center max-w-590 block mx-auto">
                 <img
                     src="{% static 'img/apac-2025.svg' %}"
-                    alt="Pycon PH 2024"
-                    class="w-290 md:w-full mb-25 md:mb-36"
+                    alt="Pycon PH 2025"
+                    class="w-1/2"
                 />
             </div>
-            <div
-                class="flex flex-col md:flex-row justify-center gap-15 md:gap-25 mb-36 pt-10"
-            >
-                <div class="text-12 md:text-24 text-center mb-10">
+            <div class="flex justify-center my-8 text-center font-medium text-xl">
+                <div class="">
                     1-2 March 2025
                 </div>
-                <div class="text-12 md:text-24 text-center mb-10">
+                <div class="separator mx-4"></div>
+                <div class="">
                   Ateneo de Manila University, Quezon City, Philippines
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center items-center gap-20 mb-30">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
                 {% if page.ticket_link %}
-                <a
-                    href="{{ page.ticket_link }}"
-                    class="no-underline bg-dark-yellow hover:bg-yellow-3 border-yellow-2 font-medium text-white text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
-                >
+                <a href="{{ page.ticket_link }}" class="btn-action">
                   Become a Volunteer
                 </a>
                 {% endif %}
+
                 {% if page.cfp_link %}
-                <a
-                    href="{{ page.cfp_link }}"
-                    class="no-underline bg-dark-yellow hover:bg-yellow-3 border-yellow-2 font-medium text-white text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
-                >
+                <a href="{{ page.cfp_link }}" class="btn-action">
                     Become a Speaker
                 </a>
                 {% endif %}
                 {% if page.sponsor_link %}
-                <a
-                    href="{{ page.sponsor_link }}"
-                    class="no-underline bg-dark-yellow hover:bg-yellow-3 border-yellow-2 font-medium text-white text-24 text-center w-280 py-17 rounded-full btn-shadow block mx-auto"
-                >
+                <a href="{{ page.sponsor_link }}" class="btn-action">
                     Become a Sponsor
                 </a>
                 {% endif %}

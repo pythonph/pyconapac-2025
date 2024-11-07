@@ -1,57 +1,62 @@
 {% load static %}
-<footer class="py-50 flex flex-col items-center justify-center">
-    <div class="relative w-full px-25 lg:px-0">
-        <div class="lg:w-870 mx-auto text-center">
-            <h2 class="font-medium text-48 md:text-80 mb-20">
-                Code of Conduct
-            </h2>
-            <p class="text-14 md:text-16">
-                PyCon PH is a community conference intended for
-                collaboration in the developer community.
-            </p>
-            <p class="text-14 md:text-16">
-                We value the participation of each member of the Python
-                community and want all attendees to have an enjoyable
-                and fulfilling experience. Accordingly, all attendees
-                are expected to show respect and courtesy to other
-                attendees throughout the conference and at all
-                conference events, whether officially sponsored by
-                PythonPH, Inc. or not.
-            </p>
-            <p class="text-14 md:text-16">
-                To make clear what is expected, all delegates/attendees,
-                speakers, exhibitors, organizers and volunteers at any
-                PyCon event are required to conform to the following
-                Code of Conduct. Organizers will enforce this code
-                throughout the event.
-            </p>
-            <h2 class="text-24 md:text-16 mb-20">
-                Contact Information
-            </h2>
-            <p class="text-14 md:text-16">
-                If you believe that someone is violating the code of conduct, or have any other concerns, please contact
-                a member of the PyCon APAC 2025 Code of Conduct workgroup immediately. They can be reached by emailing
-                <a href="mailto:coc@python.ph" class="text-yellow">coc@python.ph</a>
-            </p>
-            <h2 class="text-24 md:text-16 mb-20">License</h2>
-            <p class="text-14 md:text-16">
-                This Code of Conduct is based on the PyCon US 2015 CoC,
-                and is licensed under a Creative Commons Attribution 3.0
-                Unported License.
-            </p>
+<div class="my-16 text-center mx-auto md:w-3/4">
+    <div class="flex flex-col justify-center">
+        <h2 class="coc-header text-7xl my-4">
+            Code of Conduct
+        </h2>
+        <p class="coc-subheader mx-auto w-2/3 my-4">
+            PyCon PH is a community conference intended for
+            collaboration in the developer community.
+        </p>
+
+        <div class="flex flex-col md:flex-row my-4 gap-8 w-2/3 mx-auto">
+          <p class="text-left basis-1/2">
+              We value the participation of each member of the Python
+              community and want all attendees to have an enjoyable
+              and fulfilling experience. Accordingly, all attendees
+              are expected to show respect and courtesy to other
+              attendees throughout the conference and at all
+              conference events, whether officially sponsored by
+              PythonPH, Inc. or not.
+          </p>
+          <p class="text-left basis-1/2">
+              To make clear what is expected, all delegates/attendees,
+              speakers, exhibitors, organizers and volunteers at any
+              PyCon event are required to conform to the following
+              Code of Conduct. Organizers will enforce this code
+              throughout the event.
+          </p>
         </div>
+        <h2 class="coc-subheader mx-auto my-4">
+            Contact Information
+        </h2>
+        <p class="w-2/3 mx-auto">
+            If you believe that someone is violating the code of conduct, or have any other concerns, please contact
+            a member of the PyCon APAC 2025 Code of Conduct workgroup immediately. They can be reached by emailing
+            <a href="mailto:coc@python.ph" class="text-yellow">coc@python.ph</a>
+        </p>
+        <h2 class="coc-subheader mx-auto my-4">License</h2>
+        <p class="mx-auto w-2/3 md:w-full">
+            This Code of Conduct is based on the PyCon US 2015 CoC,
+            and is licensed under a Creative Commons
+        <p>
+          Attribution 3.0 Unported License.
+        </p>
     </div>
-    <div class="pt-125">
-        <img class="w-full max-w-442" src="{% static 'img/pycon.png' %}" alt="Pycon PH 2025" />
-    </div>
+</div>
+
+<footer class="mx-auto bg-img-3 min-h-[900px]">
+  <div class="mx-auto w-2/3">
+    <img class="mx-auto w-1/2" src="{% static 'img/pycon.png' %}" alt="Pycon PH 2025" />
     <div class="pb-50">
-      <p class="text-white text-16 text-center max-w-325 mx-auto">
+      <p class="text-16 text-center mx-auto">
           Message us at pycon@python.ph for questions and inquiries
       </p>
       {% include "socials.html" %}
       <p class="text-center text-14">
-          This site is built using Django and Wagtail.
+      This site is built using <a class="underline" href="https://www.djangoproject.com/">Django</a> and
+      <a class="underline" href="https://wagtail.org/">Wagtail</a>.
       </p>
     </div>
-    <!-- <script src="{% static 'js/app.js' %}"></script> -->
+  <div>
 </footer>

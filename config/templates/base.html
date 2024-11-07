@@ -15,6 +15,7 @@
             {% endblock %}
         </title>
         <link rel="icon" type="image/x-icon" href="{% static 'img/icon/favicon.ico' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="PyCon APAC 2025" />
@@ -26,10 +27,7 @@
         {# Global stylesheets #}
         {% compress css %}
             <link rel="stylesheet" href="{% static 'css/app.css' %}" />
-            <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}" /> -->
             <link rel="stylesheet" href="{% static 'css/pycon.css' %}" />
-            <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
-            <link rel="stylesheet" href="{% static 'css/calendar_blue.css' %}">
         {% endcompress %}
 
         {% block extra_css %}
@@ -46,9 +44,6 @@
         {% endblock %}
 
         {# Global javascript #}
-        <!-- <script src="{% static 'js/app.js' %}"></script> -->
-        <script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/splide.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/tooltip.js' %}"></script>
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
