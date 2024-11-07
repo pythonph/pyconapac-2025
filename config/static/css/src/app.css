@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-action {
+    @apply px-10 py-4;
+    @apply text-white text-lg font-bold;
+    @apply rounded-full shadow-lg;
+    background-color: #FFA401;
+}
+
+.btn-action:hover {
+    @apply bg-yellow-400;
+}
