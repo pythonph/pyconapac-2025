@@ -59,7 +59,8 @@ class HomePage(Page):
     sponsor_title = models.CharField(max_length=255)
     sponsor_subtitle = models.CharField(max_length=255, blank=True)
 
-    banner_title = models.CharField(max_length=20, blank=True)
+    banner_title = models.CharField(max_length=255, blank=True)
+    banner_call_to_action = models.CharField(max_length=255, blank=True)
     banner_link = models.URLField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -73,9 +74,10 @@ class HomePage(Page):
         FieldRowPanel(
             [
                 FieldPanel("banner_title"),
+                FieldPanel("banner_call_to_action"),
                 FieldPanel("banner_link"),
             ],
-            heading="Date and Time",
+            heading="Promotional Banner",
         ),
         FieldRowPanel(
             [
