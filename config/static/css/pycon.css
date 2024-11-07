@@ -51,3 +51,10 @@ body {
     line-height: 43.58px;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .coc-subheader {
+        font-size: 20px;
+        line-height: unset;
+    }
+}
