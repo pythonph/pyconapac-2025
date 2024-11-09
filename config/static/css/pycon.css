@@ -28,10 +28,30 @@ body {
     background-size: cover;
 }
 
+.bg-img-home {
+    background-image: url(../img/bg/bg-home.svg) !important;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat:
+}
+
 /* Components */
 
+.pycon-header {
+    font-family: 'Maragsa', sans-serif;
+}
+
+.pycon-subheader {
+    font-family: Noto Sans;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 43.58px;
+    text-align: center;
+}
+
 .separator {
-  border-left: 1px solid #ccc;
+  border-left: 1px text-4xl font-bold text-gray-900 solid #ccc;
   opacity: 30%;
 }
 
@@ -62,4 +82,10 @@ body {
 .promotional-banner {
     background: linear-gradient(90deg, #329969 39.18%, #2C875D 100%);
     font-size: 16px;
+}
+
+.border-bamboo {
+    border-color: #a66f3f; /* Bamboo-like color */
+    border-style: double;
+    border-width: 4px;
 }
