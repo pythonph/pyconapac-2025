@@ -10,7 +10,6 @@ RUN pip install -r /usr/src/app/requirements.txt
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 80

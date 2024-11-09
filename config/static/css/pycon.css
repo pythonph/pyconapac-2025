@@ -37,6 +37,15 @@ body {
 
 /* Components */
 
+.separator {
+  border-left: 1px text-4xl font-bold text-gray-900 solid #ccc;
+  opacity: 30%;
+}
+
+.social-icon {
+    filter: invert(60%);
+}
+
 .pycon-header {
     font-family: 'Maragsa', sans-serif;
 }
@@ -50,30 +59,8 @@ body {
     text-align: center;
 }
 
-.separator {
-  border-left: 1px text-4xl font-bold text-gray-900 solid #ccc;
-  opacity: 30%;
-}
-
-.social-icon {
-    filter: invert(60%);
-}
-
-.coc-header {
-    font-family: 'Maragsa', sans-serif;
-}
-
-.coc-subheader {
-    font-family: Noto Sans;
-    font-size: 32px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 43.58px;
-    text-align: center;
-}
-
 @media (max-width: 768px) {
-    .coc-subheader {
+    .pycon-subheader {
         font-size: 20px;
         line-height: unset;
     }
