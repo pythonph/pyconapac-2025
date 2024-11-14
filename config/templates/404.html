@@ -2,10 +2,26 @@
 
 {% block title %}Page not found{% endblock %}
 
-{% block body_class %}template-404{% endblock %}
+{% block extra_css %}
+<style>
+.error-page {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.content-title {
+  font-size: 32px;
+}
+</style>
+{% endblock %}
 
 {% block content %}
-<h1>Page not found</h1>
-
-<h2>Sorry, this page could not be found.</h2>
+<div class="max-w-3xl mx-auto text-center error-page">
+    <h1 class="content-title text-24">Page not found</h1>
+    <p>Sorry, this page could not be found.</p>
+</div>
 {% endblock %}
+
+{% block footer %}
+    {% include "footer-slim.html" %}
+{% endblock footer %}
