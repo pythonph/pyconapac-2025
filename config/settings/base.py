@@ -162,6 +162,7 @@ MEDIA_URL = "/media/"
 # https://django-compressor.readthedocs.io/en/stable/index.html
 
 COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_URL = STATIC_URL
 
 COMPRESS_ENABLED = True
 
