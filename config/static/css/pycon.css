@@ -76,3 +76,7 @@ body {
     border-style: double;
     border-width: 4px;
 }
+
+.content-title {
+  font-family: 'Maragsa', sans-serif;
+}

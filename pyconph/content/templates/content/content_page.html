@@ -1,58 +1,65 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
-
-{% block body_class %}bg-blue-1{% endblock %}
+{% block body_class %}{% endblock %}
 
 {% block extra_css %}
-<style type="text/css">
-h1, h2, h3, h4 {
-  {% comment %} color: #FFCA50 !important; {% endcomment %}
-  margin-top: 32px;
-}
-ul > li {
-  font-size: 1.125rem;
-  line-height: 1.293rem;
-  color: rgba(74,48,10,.6);
-}
+<style>
 p {
-    font-size: 1rem;
+  margin: 12px;
+}
+
+ul > li {
+  margin: 12px;
+  margin-left: 20px;
+  list-style-type: disc; /* Options: disc, circle, square, none */
+  list-style-position: inside; /* inside or outside */
+}
+
+h3 {
+    margin: 32px 0;
+    font-family: Noto Sans;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 43.58px;
+}
+
+h4 {
+    font-family: Noto Sans;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 43.58px;
 }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="hidden md:block">
-    {% include "content/_navbar.html" %}
-</div>
 
-<div class="md:hidden">
-    {% include "content/_navbar-mobile.html" %}
-</div>
+{% with page=page.get_parent.specific %}
+{% if page.banner_title %}
+  <div class="w-full text-center text-white promotional-banner py-2">
+    {{ page.banner_title }}
+      <a href="{{ page.banner_link }}"
+         class="underline underline-offset-2 font-bold decoration-dotted decoration-1">
+        {{ page.banner_call_to_action }}
+      </a>
+  </div>
+{% endif %}
+{% endwith %}
 
-<div class="mx-auto px-12 py-32" style="max-width: 1204px">
-    <div class="mx-auto px-15 2xl:px-0 relative pb-90">
-        <div class="mb-32">
-            <h2 class="text-white text-32 lg:text-48 font-medium">
-                {{ page.content_title }}
-            </h2>
-            {% if page.content_subtitle %}
-            <h2 class="text-white text-24 font-baybayinsisil mb-10 lg:mb-32">
-                {{ page.content_subtitle }}
-            </h2>
-            {% endif %}
-            {% if page.content_title == 'Makati DIY Walking Tour' %}
-                <div class="mt-6" >
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1hs0PvTJet8BTrHQPa1o2iOb-neg7_ss&hl=en&ehbc=2E312F" width="100%" height="480"></iframe> 
-                </div>
-            {% endif %}
-            {% if page.url == '/talks/' %}
-              <img src="https://raw.githubusercontent.com/pythonph/pyconph-2024/main/pyconph/home/static/pyconph2024_program.png" class="w-full" alt="Talks" />
-            {% endif %}
-            <p>
-                {{ page.content_body|richtext }}
-            </p>
-        </div>
-    </div>
+<div class="max-w-3xl mx-auto">
+    <div class="mb-24">
+        <h2 class="text-5xl my-10 content-title">
+            {{ page.content_title }}
+        </h2>
+        {% if page.content_subtitle %}
+        <h2 class="mb-10 lg:mb-32">
+            {{ page.content_subtitle }}
+        </h2>
+        {% endif %}
+        <p>
+            {{ page.content_body|richtext }}
+        </p>
+  </div>
 </div>
 {% endblock content %}
 

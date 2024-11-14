@@ -1,24 +1,16 @@
 {% load static %}
-<footer class="py-50 bg-img-3 flex flex-col items-center justify-center">
-    <div class="relative w-full px-25 lg:px-0">
-        <div class="lg:w-870 mx-auto text-center">
-        </div>
-        <div class="absolute right-90 -top-150 hidden md:block">
-            <img class="star" src="{% static 'img/constellation-11.svg' %}" alt="constellation" />
-        </div>
-        <div class="absolute left-50 bottom-0 hidden md:block">
-            <img class="star" src="{% static 'img/constellation-12.svg' %}" alt="constellation" />
-        </div>
+<footer class="mx-auto bg-img-3 min-h-screen md:min-h-[900px]">
+  <div class="mx-auto max-w-3xl">
+    <img class="mx-auto w-1/2" src="{% static 'img/pycon.png' %}" alt="Pycon PH 2025" />
+    <div class="pb-50">
+      <p class="text-16 text-center mx-auto">
+          Message us at pycon@python.ph for questions and inquiries
+      </p>
+      {% include "socials.html" %}
+      <p class="text-center text-14">
+      This site is built using <a class="underline" href="https://www.djangoproject.com/">Django</a> and
+      <a class="underline" href="https://wagtail.org/">Wagtail</a>.
+      </p>
     </div>
-    <div class="pt-125 pb-50">
-        <img class="w-full max-w-442" src="{% static 'img/pyconph2024.svg' %}" alt="Pycon PH 2024" />
-        <p class="text-white text-16 text-center max-w-325 mx-auto">
-            Message us at pycon@python.ph for questions and inquiries
-        </p>
-        {% include "socials.html" %}
-        <p class="text-center text-14">
-            This site is built using Django and Wagtail.
-        </p>
-    </div>
-    <!-- <script src="{% static 'js/app.js' %}"></script> -->
+  <div>
 </footer>
