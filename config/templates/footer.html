@@ -46,8 +46,21 @@
 </div>
 
 <footer class="mx-auto bg-img-3 min-h-screen md:min-h-[900px]">
-  <div class="mx-auto max-w-3xl">
+  <div class="flex flex-col mx-auto max-w-3xl gap-4">
     <img class="mx-auto w-1/2" src="{% static 'img/pycon.png' %}" alt="Pycon PH 2025" />
+    <div class="flex flex-col md:flex-row justify-center items-center lg:gap-y-8 md:gap-x-8 text-3xl text-center">
+      {% if page.ticket_link %}
+        <a href="{{ page.ticket_link }}" class="text-amber-500">
+          Get Tickets
+        </a>
+      {% endif %}
+
+      {% if page.sponsor_link %}
+        <a href="{{ page.sponsor_link }}" class="text-lime-900">
+          Become a Sponsor
+        </a>
+      {% endif %}
+    </div>
     <div class="pb-50">
       <p class="text-16 text-center mx-auto">
           Message us at pycon@python.ph for questions and inquiries
