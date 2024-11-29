@@ -1,0 +1,85 @@
+{% load static %}
+
+<header class="bg-cream text-dark py-6 px-6">
+  <div class="container mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img
+        src="{% static 'img/icon/pyconapac-navbar.svg' %}"
+        alt="Pycon PH 2024"
+      />
+    </div>
+
+    <!-- Navigation Links and Get Tickets -->
+    <div class="hidden xl:flex items-center space-x-6">
+      <!-- Navigation Links -->
+      <nav class="flex space-x-6 text-base font-medium">
+        <a href="#" class="text-[#000000] hover:text-green-700">Sponsors</a>
+        <a href="#" class="text-[#000000] hover:text-green-700">Partners</a>
+        <a href="#" class="text-[#000000] hover:text-green-700">Patron</a>
+        <a href="#" class="text-[#000000] hover:text-green-700">Location</a>
+        <a href="#" class="text-[#000000] hover:text-green-700">Agenda</a>
+        <a href="#" class="text-[#000000] hover:text-green-700">Policy</a>
+        <a href="#" class="text-[#000000] hover:text-green-700"
+          >Code of Conduct</a
+        >
+        <a href="#" class="text-[#000000] hover:text-green-700">Volunteers</a>
+      </nav>
+
+      <!-- Get Tickets Button -->
+      <a
+        href="#"
+        class="bg-[#FFA602] text-white px-6 py-[17px] rounded-full text-base font-bold hover:bg-yellow-600"
+      >
+        Get Tickets
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="xl:hidden text-gray-800 focus:outline-none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden flex-col space-y-4 mt-4 xl:hidden text-base font-medium text-center"
+  >
+    <a href="#" class="text-[#000000] hover:text-green-700">Sponsors</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Partners</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Patron</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Location</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Agenda</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Policy</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Code of Conduct</a>
+    <a href="#" class="text-[#000000] hover:text-green-700">Volunteers</a>
+    <a
+      href="#"
+      class="bg-[#FFA602] text-white px-6 py-3 rounded-full text-base font-bold hover:bg-yellow-600"
+    >
+      Get Tickets
+    </a>
+  </div>
+</header>
+<div class="w-full h-[2px] bg-[#3D521E33]"></div>
+
+<script>
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
