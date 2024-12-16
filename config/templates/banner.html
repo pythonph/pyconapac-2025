@@ -1,0 +1,12 @@
+{% with banner=page.active_banner %}
+  {% if banner %}
+    <div class="w-full text-center text-white promotional-banner py-2">
+      {{ banner.title }}
+        <a href="{{ banner.link }}"
+           class="underline underline-offset-2 font-bold decoration-dotted decoration-1">
+          {{ banner.call_to_action }}
+        </a>
+    </div>
+  {% endif %}
+{% endwith %}
+
