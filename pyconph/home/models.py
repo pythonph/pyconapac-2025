@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Count
 from django.utils.text import slugify
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
@@ -217,8 +218,11 @@ class HomePage(Page):
         ).order_by("sort_order")
 
     def sponsor_types(self):
-        return SponsorType.objects.filter(
+        return SponsorType.objects.annotate(
+            sponsor_count=Count("sponsors")
+        ).filter(
             sponsor_type_home__page=self,
+            sponsor_count__gt=0,
         ).order_by("sponsor_type_home__sort_order")
 
     def sponsors(self):

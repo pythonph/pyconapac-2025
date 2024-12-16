@@ -60,6 +60,10 @@
         {% include "home/_speakers.html" %}
     {% endif %}
 
+    {% if page.sponsor_types %}
+        {% include "home/_sponsor_list.html" %}
+    {% endif %}
+
 </main>
 
 {% endblock content %}

@@ -1,70 +1,21 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="relative md:pb-300 bg-img-2 md:pt-125 min-h-1570" id="sponsors">
-  <div class="flex flex-col md:flex-row">
+<div class="mx-auto max-w-5xl my-24">
+  <h2 class="pycon-header text-5xl md:text-6xl my-4">Special Thanks to Our Sponsors</h2>
+  <h3 class="text-xl">This event was made possible with the help of our generous sponsors</h3>
+
+  <div class="pt-8">
+  {% for sponsor_type in page.sponsor_types %}
     <div
-      class="w-full md:w-1/2 lg:w-5/12 md:sticky top-0 h-full overflow-y-auto flex flex-col md:justify-end md:items-end pl-25 lg:pl-0"
-    >
-      <div class="md:w-360">
-        <p class="font-baybayinsisil text-20 md:text-24 text-yellow">
-          Sponsors
-        </p>
-        <h2 class="font-medium text-48 md:text-80 text-white mb-20">
-          Sponsors
-        </h2>
-        <h3 class="text-18 md:text-24 text-white mb-20">
-          This event was made possible with the help of our generous sponsors
-        </h3>
-        {% if page.sponsor_link %}
-        <a
-          href="{{ page.sponsor_link }}"
-          class="no-underline bg-yellow-1 hover:bg-yellow-3 border-yellow-2 text-blue text-24 text-center w-290 h-70 rounded-full btn-shadow flex justify-center items-center mb-30"
-          >Become a Sponsor</a
-        >
-        {% endif %}
-      </div>
-    </div>
-    <div class="w-full md:w-1/2 lg:w-7/12 pl-20">
-      {% for sponsor_type in page.sponsor_types %}
-      <div class="">
-        <h3
-          class="text-24 md:text-32 text-white border-b border-white-20 pb-20"
-        >
-          {{ sponsor_type }}
-        </h3>
-        <div
-          class="flex flex-wrap justify-start items-center gap-20 pt-34 pb-50"
-        >
-          {% for sponsor in page.sponsors %}
-          {% if sponsor.sponsor_type == sponsor_type %}
-          <div class="h-120 w-280 flex justify-center bg-white rounded-[8px]">
-            <div class="tooltip p-25">
-              <img
-                class="w-full h-full object-contain"
-                title="{{ sponsor.name }}"
-                src="{{ sponsor.logo.url }}"
-                alt="{{ sponsor.name }}"
-              />
-              <div class="tooltip-box">
-                {{ sponsor.info }}
-                <br><br>
-                You can visit us at <a href="{{ sponsor.website_url }}" 
-                target="_blank">{{ sponsor.name }}</a>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-          {% endfor %}
+        class="flex flex-column border-t border-solid border-[#d9d8c5] {% if forloop.last %}border-b{% endif %}">
+      <div class="sponsor-type w-1/4 pr-8 mx-4 my-auto">{{ sponsor_type }}</div>
+      {% for sponsor in sponsor_type.sponsors.all %}
+        <div class="flex items-center m-8 h-24">
+          <img src="{{ sponsor.logo.url }}" class="max-h-24 max-w-40" />
         </div>
-      </div>
       {% endfor %}
     </div>
-  </div>
-  <div class="absolute left-0 -top-150 hidden md:block">
-    <img
-      class="star"
-      src="{% static 'img/constellation-10.svg' %}"
-      alt="constellation"
-    />
+  {% endfor %}
   </div>
 </div>
+
