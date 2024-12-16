@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
@@ -53,6 +54,8 @@ INSTALLED_APPS = [
     "pyconph.search",
     "pyconph.presentations",
     "pyconph.sponsors",
+
+    "livereload",
 ]
 
 MIDDLEWARE = [
@@ -65,6 +68,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "livereload.middleware.LiveReloadScript",
 ]
 
 ROOT_URLCONF = "config.urls"

@@ -50,6 +50,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+#### Start the server with livereload
+
+```bash
+python manage.py livereload
+```
+
 #### Tailwind
 
 To work with styling and tailwind, you need to have Node/NPM installed. Install packages:
@@ -100,7 +106,6 @@ We follow the guidelines outlined in [PEP 8](https://www.python.org/dev/peps/pep
 - Use docstrings to document functions, classes, and modules.
 - Use complete sentences and proper grammar in comments and docstrings.
 
-
 ### Standard Commit Messages
 
 This project follows a standard format for commit messages to ensure consistency and clarity in the commit history.
@@ -121,7 +126,7 @@ Where `type` is one of the following:
 - `test`: Adding missing tests or correcting existing tests
 - `chore`: Changes to the build process or auxiliary tools and libraries such as documentation generation
 
-The `scope` is optional and should be a short description of the affected component. 
+The `scope` is optional and should be a short description of the affected component.
 
 The `subject` should be a brief summary of the changes.
 
@@ -133,7 +138,7 @@ The footer should contain any additional information, such as references to issu
 
 - [Wagtail](https://wagtail.org/) - Wagtail is the leading open-source Python CMS
 - [Python](https://www.python.org/) - Python is a programming language that lets you work quickly
-and integrate systems more effectively.
+  and integrate systems more effectively.
 
 ### Authors
 
