@@ -34,6 +34,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 3rem;
+    margin-bottom: -20px;
 }
 
 .bg-bamboo {
