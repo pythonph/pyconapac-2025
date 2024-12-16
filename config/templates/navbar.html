@@ -1,0 +1,68 @@
+{% load static %}
+
+<header class="bg-cream text-dark py-6 px-6">
+  <div class="mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img
+        src="{% static 'img/icon/pyconapac-navbar.svg' %}"
+        alt="Pycon PH 2024"
+      />
+    </div>
+
+    <!-- Navigation Links and Get Tickets -->
+    <div class="hidden xl:flex items-center space-x-6">
+      <!-- Navigation Links -->
+      <nav class="flex space-x-6 text-base font-medium">
+        {% for child in page.get_children %}
+        <a href="{{ child.url }}" class="text-[#000000] hover:text-green-700">{{ child.title }}</a>
+        {% endfor %}
+      </nav>
+
+      <!-- Get Tickets Button -->
+      {% if page.ticket_link %}
+      <a href="{{ page.ticket_link }}"
+        class="bg-[#FFA602] text-white px-6 py-[17px] rounded-full text-base font-bold hover:bg-yellow-600"
+      >
+        Get Tickets
+      </a>
+      {% endif %}
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="xl:hidden text-gray-800 focus:outline-none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden flex flex-col space-y-4 mt-4 xl:hidden text-base font-medium text-center"
+  >
+    {% for child in page.get_children %}
+      <a href="{{ child.url }}" class="text-[#000000] hover:text-green-700">{{ child.title }}</a>
+    {% endfor %}
+  </div>
+</header>
+<div class="w-full h-[2px] bg-[#3D521E33]"></div>
+
+<script>
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>

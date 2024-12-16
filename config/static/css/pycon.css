@@ -32,7 +32,16 @@ body {
     background-image: url(../img/bg/bg-home.svg) !important;
     background-position: 50%;
     background-size: cover;
-    background-repeat: no-repeat:
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+    margin-bottom: -20px;
+}
+
+.bg-bamboo {
+    background-image: url(../img/bg/bg-bamboo.png) !important;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Components */
@@ -59,6 +68,14 @@ body {
     text-align: center;
 }
 
+.bamboo-divider {
+    background-image: url(../img/bg/bamboo-divider.svg) !important;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -7px;
+}
+
 @media (max-width: 768px) {
     .pycon-subheader {
         font-size: 20px;
@@ -81,7 +98,6 @@ body {
   font-family: 'Maragsa', sans-serif;
 }
 
-
 .sponsor-type {
     font-family: Noto Sans;
     font-size: 18px;
@@ -92,3 +108,23 @@ body {
     border-color: #d9d8c5;
 }
 
+/* Venue section */
+.event-venue-box {
+    color: white;
+}
+.event-venue-box .pycon-header {
+    line-height: 1.2;
+}
+.venue-subheader {
+    font-family: Noto Sans;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.btn {
+    background-color: #FFA602;
+    border-radius: 50px;
+    display: grid;
+    align-items: center;
+}

@@ -36,6 +36,25 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+        {% if page.get_parent.title == 'Root' %}
+          {% include "banner.html" %}
+        {% else %}
+          {% with page=page.get_parent.specific %}
+            {% include "banner.html" %}
+          {% endwith %}
+        {% endif %}
+
+        {% block navbar %}
+          {% if page.get_parent.title == 'Root' %}
+            {% include "navbar.html" %}
+          {% else %}
+            {% with page=page.get_parent.specific %}
+              {% include "navbar.html" %}
+            {% endwith %}
+          {% endif %}
+        {% endblock %}
+
+        {# Wagtail userbar #}
         {% wagtailuserbar %}
         {% block content %}{% endblock %}
 
