@@ -27,12 +27,13 @@
       </nav>
 
       <!-- Get Tickets Button -->
-      <a
-        href="#"
+      {% if page.ticket_link %}
+      <a href="{{ page.ticket_link }}"
         class="bg-[#FFA602] text-white px-6 py-[17px] rounded-full text-base font-bold hover:bg-yellow-600"
       >
         Get Tickets
       </a>
+      {% endif %}
     </div>
 
     <!-- Mobile Menu Button -->
