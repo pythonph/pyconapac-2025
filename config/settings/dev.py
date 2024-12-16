@@ -10,7 +10,7 @@ SECRET_KEY = "django-insecure-#)z=peyywxgzak%xzdl9@*qfl!ie402zk57@cbh8@n*(9ar8do
 ALLOWED_HOSTS = ["*"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 try:
     from .local import *
