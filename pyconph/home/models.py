@@ -4,9 +4,12 @@ from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
 from wagtail.fields import RichTextField
 from wagtail.models import Orderable, Page
+from wagtail.snippets.models import register_snippet
 
 from pyconph.presentations.models import Schedule, Speaker
 from pyconph.sponsors.models import Sponsor, SponsorType
+from django.utils import timezone
+from datetime import datetime
 
 
 class PageContent(Orderable, models.Model):
@@ -26,6 +29,38 @@ class PageContent(Orderable, models.Model):
     @property
     def slug(self):
         return slugify(self.title)
+
+
+class Banner(models.Model):
+    page = ParentalKey('home.HomePage', related_name='banners', on_delete=models.CASCADE)
+    title = models.CharField(max_length=255, blank=True)
+    call_to_action = models.CharField(max_length=255, blank=True)
+    link = models.URLField(blank=True)
+    start_date = models.DateField(blank=False)
+    start_time = models.TimeField(blank=False, default='00:00')
+    end_date = models.DateField(blank=False)
+    end_time = models.TimeField(blank=False, default='23:59')
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('call_to_action'),
+        FieldPanel('link'),
+        FieldPanel('start_date'),
+        FieldPanel('start_time'),
+        FieldPanel('end_date'),
+        FieldPanel('end_time'),
+    ]
+
+    def is_active(self):
+        now = timezone.now()
+        start_datetime = timezone.make_aware(datetime.combine(self.start_date, self.start_time))
+        end_datetime = timezone.make_aware(datetime.combine(self.end_date, self.end_time))
+        return start_datetime <= now <= end_datetime
+
+    def __str__(self):
+        return self.title
+
+register_snippet(Banner)
 
 
 class HomePage(Page):
@@ -71,14 +106,7 @@ class HomePage(Page):
                 FieldPanel("sponsor_link"),
             ]
         ),
-        FieldRowPanel(
-            [
-                FieldPanel("banner_title"),
-                FieldPanel("banner_call_to_action"),
-                FieldPanel("banner_link"),
-            ],
-            heading="Promotional Banner",
-        ),
+        InlinePanel('banners', label="Promotional Banner"),
         FieldRowPanel(
             [
                 FieldPanel("date_start"),
@@ -197,3 +225,8 @@ class HomePage(Page):
         return Sponsor.objects.filter(
             sponsor_home__page=self,
         ).order_by("sponsor_home__sort_order")
+
+    def active_banner(self):
+        for banner in self.banners.all():
+            if banner.is_active():
+                return banner
