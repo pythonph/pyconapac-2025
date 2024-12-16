@@ -51,22 +51,11 @@
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="hidden flex-col space-y-4 mt-4 xl:hidden text-base font-medium text-center"
+    class="hidden flex flex-col space-y-4 mt-4 xl:hidden text-base font-medium text-center"
   >
-    <a href="#" class="text-[#000000] hover:text-green-700">Sponsors</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Partners</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Patron</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Location</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Agenda</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Policy</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Code of Conduct</a>
-    <a href="#" class="text-[#000000] hover:text-green-700">Volunteers</a>
-    <a
-      href="#"
-      class="bg-[#FFA602] text-white px-6 py-3 rounded-full text-base font-bold hover:bg-yellow-600"
-    >
-      Get Tickets
-    </a>
+    {% for child in page.get_children %}
+      <a href="{{ child.url }}" class="text-[#000000] hover:text-green-700">{{ child.title }}</a>
+    {% endfor %}
   </div>
 </header>
 <div class="w-full h-[2px] bg-[#3D521E33]"></div>
