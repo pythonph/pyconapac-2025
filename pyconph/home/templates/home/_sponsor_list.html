@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="mx-auto max-w-5xl mb-24">
+<div class="mx-auto max-w-5xl my-24">
   <h2 class="pycon-header text-5xl md:text-6xl my-4">Special Thanks to Our Sponsors</h2>
   <h3 class="text-xl">This event was made possible with the help of our generous sponsors</h3>
 
@@ -10,8 +10,8 @@
         class="flex flex-column border-t border-solid border-[#d9d8c5] {% if forloop.last %}border-b{% endif %}">
       <div class="sponsor-type w-1/4 pr-8 mx-4 my-auto">{{ sponsor_type }}</div>
       {% for sponsor in sponsor_type.sponsors.all %}
-        <div class="m-8">
-          <img src="{{ sponsor.logo.url }}" class="h-24" />
+        <div class="flex items-center m-8 h-24">
+          <img src="{{ sponsor.logo.url }}" class="max-h-24 max-w-40" />
         </div>
       {% endfor %}
     </div>
