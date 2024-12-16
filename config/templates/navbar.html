@@ -14,16 +14,9 @@
     <div class="hidden xl:flex items-center space-x-6">
       <!-- Navigation Links -->
       <nav class="flex space-x-6 text-base font-medium">
-        <a href="#" class="text-[#000000] hover:text-green-700">Sponsors</a>
-        <a href="#" class="text-[#000000] hover:text-green-700">Partners</a>
-        <a href="#" class="text-[#000000] hover:text-green-700">Patron</a>
-        <a href="#" class="text-[#000000] hover:text-green-700">Location</a>
-        <a href="#" class="text-[#000000] hover:text-green-700">Agenda</a>
-        <a href="#" class="text-[#000000] hover:text-green-700">Policy</a>
-        <a href="#" class="text-[#000000] hover:text-green-700"
-          >Code of Conduct</a
-        >
-        <a href="#" class="text-[#000000] hover:text-green-700">Volunteers</a>
+        {% for child in page.get_children %}
+        <a href="{{ child.url }}" class="text-[#000000] hover:text-green-700">{{ child.title }}</a>
+        {% endfor %}
       </nav>
 
       <!-- Get Tickets Button -->
