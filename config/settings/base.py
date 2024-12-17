@@ -54,8 +54,6 @@ INSTALLED_APPS = [
     "pyconph.search",
     "pyconph.presentations",
     "pyconph.sponsors",
-
-    "livereload",
 ]
 
 MIDDLEWARE = [
@@ -68,7 +66,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    "livereload.middleware.LiveReloadScript",
 ]
 
 ROOT_URLCONF = "config.urls"
