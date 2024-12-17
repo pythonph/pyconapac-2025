@@ -1096,6 +1096,19 @@ video {
   background-color: #FFA401;
 }
 
+/*
+A better version of the "Get ticket" button on the home page with the hover effect
+*/
+.btn-action.custom-btn {
+  padding-left:5rem;
+  padding-right:5rem;
+  padding-top:2rem;
+  padding-bottom:2rem;
+  font-size:1.300rem;
+  line-height:1.75rem;
+  font-weight:1000;
+}
+
 .btn-action:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
