@@ -1,0 +1,169 @@
+{% load static %}
+
+<!-- What to expect section -->
+<div class="max-w-full min-h-[800px] mx-auto bg-bamboo-1 bg-[#3D521E] md:min-h-[800px] py-[80px] relative">
+    <!-- Decorative bamboo leaves -->
+    <div class="absolute top-[-150px] h-[895px] w-[315px] z-10 overflow-visible">
+        <img src="{% static 'img/bg/bamboo-leaves-1.png' %}" alt="" class="overflow-visible z-10 w-full h-full object-contain">
+    </div>
+    <div class="absolute bottom-0 h-[500px] w-[207px] z-10">
+        <img src="{% static 'img/bg/bamboo-leaves-2.png' %}" alt="" class="w-full h-full">
+    </div>
+    
+    <!-- What to expect content -->
+    <div class="container mx-auto px-4 flex flex-col items-center justify-between h-full gap-8 z-20 relative" >
+        <div class="w-full max-w-3xl">
+            <h1 class="content-title text-5xl md:text-7xl text-white font-medium mb-5 text-center">
+                What to expect this year?
+            </h1>
+            <h2 class="content-subtitle italic text-2xl md:text-3xl text-white font-medium mb-2 text-left">
+                This will be a 2-day in-person event.
+            </h2>
+        </div>
+
+        <!-- Event boxes as table -->
+        <div class="w-full max-w-6xl">
+            <div class="hidden md:block w-full">
+                <table class="w-full border-collapse table-fixed z-10">
+                    <colgroup>
+                        <col class="w-[50px]">
+                        <col>
+                        <col>
+                        <col class="w-[50px]">
+                    </colgroup>
+                    <tr>
+                        <td class="p-6 border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-b border-t border-gray-400"></td>
+                        <td class="p-6 border-b border-l border-t border-gray-400">
+                            <h3 class="content-title text-3xl font-semibold text-center text-white mb-4 font-maragsa">February 25 / Virtual</h3>
+                        </td>
+                        <td class="p-6 border-b border-l border-t border-gray-400">
+                            <h3 class="content-title text-3xl font-semibold text-center text-white mb-4 font-maragsa">February 25 / In-person</h3>
+                        </td>
+                        <td class="p-6 border-b border-l border-t border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-b border-gray-400"></td>
+                        <td class="p-6 border-l border-b border-gray-400">
+                            <div class="flex flex-col">
+                                <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Activities</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <p class="text-white/90 font-noto-sans text-sm col-span-2">
+                                        There will be talks, workshops, tutorials, lightning talks, fun group activities, book giveaways and more!
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-gray-400">
+                            <div class="flex flex-col h-full">
+                                <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Content</h4>
+                                <div class="grid grid-cols-2 gap-4 flex-grow">
+                                    <ul class="text-white/90 space-y-1 font-noto-sans text-sm">
+                                        <li>• Beginner & General Programming</li>
+                                        <li>• Backend/DevOps</li>
+                                        <li>• Machine Learning & Artificial Intelligence</li>
+                                        <li>• Distributed Computing</li>
+                                        <li>• Practices</li>
+                                    </ul>
+                                    <ul class="text-white/90 space-y-1 font-noto-sans text-sm">
+                                        <li>• Personal & Professional Development</li>
+                                        <li>• Platform/Framework/
+                                            Architecture, Security</li>
+                                        <li>• Data Science/Analysis/
+                                            Engineering</li>
+                                        <li>• Web/Mobile</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-t border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-gray-400"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Mobile view -->
+            <div class="md:hidden w-full">
+                <table class="w-full border-collapse table-fixed z-10">
+                    <colgroup>
+                        <col class="w-[50px]">
+                        <col>
+                        <col class="w-[50px]">
+                    </colgroup>
+                    <tr>
+                        <td class="p-6 border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-t border-b border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-b border-gray-400">
+                            <div class="">
+                                <h3 class="content-title text-2xl font-semibold text-center text-white mb-4 font-maragsa">February 25 / Virtual</h3>
+                                <div class="flex flex-col">
+                                    <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Activities</h4>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <p class="text-white/90 font-noto-sans text-sm col-span-2">
+                                            There will be talks, workshops, tutorials, lightning talks, fun group activities, book giveaways and more!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-b border-t border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-b border-gray-400"></td>
+                        <td class="p-6 border-l border-b border-gray-400">
+                            <div class="">
+                                <h3 class="content-title text-2xl font-semibold text-center text-white mb-4 font-maragsa">February 25 / In-person</h3>
+                                <div class="flex flex-col h-full">
+                                    <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Content</h4>
+                                    <div class="grid grid-cols-1 gap-4 flex-grow">
+                                        <ul class="text-white/90 space-y-1 font-noto-sans text-sm">
+                                            <li>• Beginner & General Programming</li>
+                                            <li>• Backend/DevOps</li>
+                                            <li>• Machine Learning & Artificial Intelligence</li>
+                                            <li>• Distributed Computing</li>
+                                            <li>• Practices</li>
+                                      
+                                        
+                                            <li>• Personal & Professional Development</li>
+                                            <li>• Platform/Framework/
+                                                Architecture, Security</li>
+                                            <li>• Data Science/Analysis/
+                                                Engineering</li>
+                                            <li>• Web/Mobile</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-b border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Yellow Python mascot -->
+    <div class="absolute yellow-python w-48 lg:w-48 z-10">
+        <img src="{% static 'img/bg/yellow-python.png' %}" alt="" class="w-full h-auto">
+    </div>
+</div>
+
+<div class="bamboo-divider max-w-full h-10"></div>
