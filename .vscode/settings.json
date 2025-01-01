@@ -1,0 +1,25 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.formatOnPaste": true,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "ruff.lint.args": ["--extend-exclude", ".vscode"],
+  "python.analysis.typeCheckingMode": "off",
+  "python.testing.pytestArgs": ["server"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportOptionalMemberAccess": "none",
+    "reportUnboundVariable": "none",
+    "reportGeneralTypeIssues": "none"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+  "python.REPL.enableREPLSmartSend": false
+}
