@@ -1,0 +1,28 @@
+{% load static %}
+
+<section class="tickets-section py-16">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-left max-w-2xl">
+                <h2 class="text-6xl font-bold mb-4 text-[#301F0E] content-title">Tickets Available</h2>
+                <p class="text-lg text-gray-700 mb-6 max-w-xl">
+                    Join us as we learn something new, teach something new, find opportunities, build cool things, make friends, and geek out!
+                </p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-right mb-2">
+                    <span class="text-gray-600">In-person & Virtual</span>
+                </div>
+                {% if page.ticket_link %}
+                <a href="{{ page.ticket_link }}" class="btn-action">
+                    Get Tickets
+                </a>
+                {% endif %}
+                <div class="mt-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-800 text-sm">Apply for Student Lorem Ipsum</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bamboo-divider max-w-full h-10"></div>
