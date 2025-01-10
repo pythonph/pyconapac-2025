@@ -830,10 +830,6 @@ video {
   justify-content: space-between;
 }
 
-.gap-12 {
-  gap: 3rem;
-}
-
 .gap-4 {
   gap: 1rem;
 }
@@ -1013,10 +1009,6 @@ video {
   font-style: italic;
 }
 
-.not-italic {
-  font-style: normal;
-}
-
 .text-\[\#000000\] {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1094,19 +1086,6 @@ video {
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   background-color: #FFA401;
-}
-
-/*
-A better version of the "Get ticket" button on the home page with the hover effect
-*/
-.btn-action.custom-btn {
-  padding-left:5rem;
-  padding-right:5rem;
-  padding-top:2rem;
-  padding-bottom:2rem;
-  font-size:1.300rem;
-  line-height:1.75rem;
-  font-weight:1000;
 }
 
 .btn-action:hover {
