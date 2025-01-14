@@ -108,7 +108,7 @@ body {
     border-color: #d9d8c5;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .sponsor-type {
     border-right: 0px;
   }
