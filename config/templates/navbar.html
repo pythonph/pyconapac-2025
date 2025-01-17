@@ -1,6 +1,6 @@
 {% load static %}
 
-<header class="bg-cream text-dark py-6 px-6">
+<header class="bg-cream text-dark py-4 md:py-6 px-4 md:px-6 relative">
   <div class="mx-auto flex items-center justify-between">
     <!-- Logo -->
     <div class="flex items-center space-x-2">
@@ -15,7 +15,7 @@
     <!-- Navigation Links and Get Tickets -->
     <div class="hidden xl:flex items-center space-x-6">
       <!-- Navigation Links -->
-      <nav class="flex space-x-6 text-base font-medium">
+      <nav class="flex space-x-6 text-base font-medium md:text-sm">
         {% for child in page.get_children %}
         <a href="{{ child.url }}" class="text-[#000000] hover:text-green-700">{{ child.title }}</a>
         {% endfor %}
@@ -53,18 +53,75 @@
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="hidden flex flex-col space-y-4 mt-4 xl:hidden text-base font-medium text-center"
+    class="hidden xl:hidden fixed inset-x-0 top-[calc(4rem+2px)] md:top-[calc(5rem+2px)] bg-white shadow-lg transform transition-all duration-300 ease-in-out z-50"
   >
-    {% for child in page.get_children %}
-      <a href="{{ child.url }}" class="text-[#000000] hover:text-green-700">{{ child.title }}</a>
-    {% endfor %}
+    <nav class="container mx-auto flex flex-col space-y-2 p-4">
+      {% for child in page.get_children %}
+        <a 
+          href="{{ child.url }}" 
+          class="text-[#000000] hover:text-green-700 transition duration-300 py-3 px-4 rounded-lg hover:bg-gray-50 text-base"
+        >
+          {{ child.title }}
+        </a>
+      {% endfor %}
+      
+      {% if page.ticket_link %}
+      <div class="pt-2">
+        <a href="{{ page.ticket_link }}"
+          class="block bg-[#FFA602] text-white px-4 py-3 rounded-full text-base font-bold hover:bg-yellow-600 transition duration-300 text-center"
+        >
+          Get Tickets
+        </a>
+      </div>
+      {% endif %}
+    </nav>
   </div>
 </header>
 <div class="w-full h-[2px] bg-[#3D521E33]"></div>
 
 <script>
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.classList.toggle("hidden");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  let isAnimating = false;
+  
+  const toggleMenu = () => {
+    if (isAnimating) return;
+    isAnimating = true;
+    
+    const isExpanded = !mobileMenu.classList.contains("hidden");
+    menuToggle.setAttribute("aria-expanded", !isExpanded);
+    
+    if (isExpanded) {
+      mobileMenu.style.opacity = "1";
+      mobileMenu.style.transform = "translateY(0)";
+      requestAnimationFrame(() => {
+        mobileMenu.style.opacity = "0";
+        mobileMenu.style.transform = "translateY(-1rem)";
+        setTimeout(() => {
+          mobileMenu.classList.add("hidden");
+          isAnimating = false;
+        }, 300);
+      });
+    } else {
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.style.opacity = "0";
+      mobileMenu.style.transform = "translateY(-1rem)";
+      requestAnimationFrame(() => {
+        mobileMenu.style.opacity = "1";
+        mobileMenu.style.transform = "translateY(0)";
+        setTimeout(() => {
+          isAnimating = false;
+        }, 300);
+      });
+    }
+  };
+
+  menuToggle.addEventListener("click", toggleMenu);
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains("hidden")) {
+      toggleMenu();
+    }
   });
 </script>
