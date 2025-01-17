@@ -1,0 +1,157 @@
+{% load static %}
+
+<!-- What to expect section -->
+<div class="max-w-full min-h-[800px] mx-auto bg-bamboo-1 bg-[#3D521E] md:min-h-[800px] py-[80px] relative">
+    <!-- Decorative bamboo leaves -->
+    <div class="absolute top-[-150px] h-[895px] w-[315px] z-10 overflow-visible">
+        <img src="{% static 'img/bg/bamboo-leaves-1.png' %}" alt="" class="overflow-visible z-10 w-full h-full object-contain">
+    </div>
+    <div class="absolute bottom-0 h-[500px] w-[207px] z-10">
+        <img src="{% static 'img/bg/bamboo-leaves-2.png' %}" alt="" class="w-full h-full">
+    </div>
+    
+    <!-- What to expect content -->
+    <div class="container mx-auto px-4 flex flex-col items-center justify-between h-full gap-8 z-20 relative" >
+        <div class="w-full max-w-3xl">
+            <h1 class="content-title text-5xl md:text-7xl text-white font-medium mb-5 text-center">
+                What to expect this year?
+            </h1>
+            <h2 class="content-subtitle italic text-2xl md:text-3xl text-white font-medium mb-2 text-left">
+                This will be a 2-day in-person event.
+            </h2>
+        </div>
+
+        <!-- Event boxes as table -->
+        <div class="w-full max-w-6xl">
+            <div class="hidden md:block w-full">
+                <table class="w-full border-collapse table-fixed z-10">
+                    <colgroup>
+                        <col class="w-[50px]">
+                        <col>
+                        <col>
+                        <col class="w-[50px]">
+                    </colgroup>
+                    <tr>
+                        <td class="p-6 border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-b border-t border-gray-400"></td>
+                        <td class="p-6 border-b border-l border-t border-gray-400">
+                            <h3 class="content-title text-3xl font-semibold text-center text-white mb-4 font-maragsa">March 1 - 2, 2025</h3>
+                        </td>
+                        <td class="p-6 border-b border-l border-t border-gray-400">
+                            <h3 class="content-title text-3xl font-semibold text-center text-white mb-4 font-maragsa">March 3, 2025</h3>
+                        </td>
+                        <td class="p-6 border-b border-l border-t border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-b border-gray-400"></td>
+                        <td class="px-6 py-20 border-l border-b border-gray-400 ">
+                            <div class="flex flex-col">
+                                <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Main Conference</h4>
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div class="grid grid-cols-2 gap-4 flex-grow">
+                                        <ul class="text-white/90 space-y-1 font-noto-sans text-sm">
+                                            <li>• Talks</li>
+                                            <li>• Workshops</li>
+                                            <li>• Panel Discussion</li>
+                                        </ul>
+                                        <ul class="text-white/90 space-y-1 font-noto-sans text-sm">
+                                            <li>• Poster Sessions</li>
+                                            <li>• PyLadies Lunch</li>
+                                            <li>• Open Spaces</li>
+                                        </ul>
+                                    </div>
+                                       </div>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-gray-400">
+                            <div class="flex flex-col h-full">
+                                <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Sprints</h4>
+                                <p class="text-white/90 font-noto-sans text-sm col-span-2">
+                                    The sprints are a welcoming space for everyone—whether you're an experienced open-source contributor, a first-timer eager to learn, or simply curious about getting involved.                                    </p>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-t border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-gray-400"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Mobile view -->
+            <div class="md:hidden w-full">
+                <table class="w-full border-collapse table-fixed z-10">
+                    <colgroup>
+                        <col class="w-[50px]">
+                        <col>
+                        <col class="w-[50px]">
+                    </colgroup>
+                    <tr>
+                        <td class="p-6 border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-t border-b border-gray-400"></td>
+                        <td class="p-6 border-t border-l border-b border-gray-400">
+                            <div class="">
+                                <h3 class="content-title text-2xl font-semibold text-center text-white mb-4 font-maragsa">March 1 - 2, 2025</h3>
+                                <div class="flex flex-col h-full ">
+                                    <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Main Conference</h4>
+                                    <div class="grid grid-cols-1 gap-4 flex-grow">
+                                        <ul class="text-white/90 space-y-1 font-noto-sans text-sm">
+                                            <li>• Talks</li>
+                                            <li>• Workshops</li>
+                                            <li>• Panel Discussion</li>
+                                            <li>• Poster Sessions</li>
+                                            <li>• PyLadies Lunch</li>
+                                            <li>• Open Spaces</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </td>
+                        <td class="p-6 border-l border-b border-t border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-b border-gray-400"></td>
+                        <td class="p-6 border-l border-b border-gray-400 z-50">
+                            <div class="">
+                                <h3 class="content-title text-2xl font-semibold text-center text-white mb-4 font-maragsa">March 3, 2025</h3>
+                                <div class="flex flex-col">
+                                    <h4 class="content-subtitle text-2xl italic text-white mb-3 font-maragsa">Sprints</h4>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <p class="text-white/90 font-noto-sans text-sm col-span-2 ">
+                                            The sprints are a welcoming space for everyone—whether you're an experienced open-source contributor, a first-timer eager to learn, or simply curious about getting involved.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-6 border-l border-b border-gray-400"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-6 border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                        <td class="p-6 border-l border-gray-400"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Yellow Python mascot -->
+    <div class="absolute yellow-python w-48 lg:w-48 z-10">
+        <img src="{% static 'img/bg/yellow-python.png' %}" alt="" class="w-full h-auto">
+    </div>
+</div>
+
+<div class="bamboo-divider max-w-full h-10"></div>

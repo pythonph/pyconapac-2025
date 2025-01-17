@@ -44,6 +44,14 @@ body {
     background-repeat: no-repeat;
 }
 
+.bg-bamboo-1{
+    background-image: url(../img/bg/bamboo-background-mask.png) !important;
+    background-color: #3D521E;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* Components */
 
 .separator {
@@ -106,6 +114,18 @@ body {
     border-right: 1px;
     border-style: solid;
     border-color: #d9d8c5;
+}
+
+/* What to expect section */
+.yellow-python{
+    bottom: 0;
+    right: 0;
+}
+
+
+.what-to-expect{
+    width: 990px;
+    height: 469px;
 }
 
 @media screen and (max-width: 768px) {
