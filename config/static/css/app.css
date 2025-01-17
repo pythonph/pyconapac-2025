@@ -987,6 +987,10 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1017,10 +1021,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-12 {
-  gap: 3rem;
 }
 
 .gap-4 {
@@ -1334,10 +1334,6 @@ video {
 
 .italic {
   font-style: italic;
-}
-
-.not-italic {
-  font-style: normal;
 }
 
 .text-\[\#000000\] {
@@ -1692,6 +1688,10 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
   }
 
   .md\:justify-end {

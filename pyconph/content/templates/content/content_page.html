@@ -29,6 +29,18 @@ h4 {
     font-weight: 400;
     line-height: 43.58px;
 }
+
+.content-body a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.content-body h2 {
+    margin: 32px 0;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 43.58px;
+}
 </style>
 {% endblock %}
 
@@ -44,9 +56,9 @@ h4 {
             {{ page.content_subtitle }}
         </h2>
         {% endif %}
-        <p>
+        <div class="content-body">
             {{ page.content_body|richtext }}
-        </p>
+        </div>
   </div>
 </div>
 {% endblock content %}
