@@ -1,55 +1,44 @@
-{% load static %}
-{% load wagtailimages_tags %}
+{% load static %} {% load wagtailimages_tags %}
 
-<div class="relative pb-200 md:pb-300 speaker" id="speakers">
-    <div class="max-w-975 mx-auto px-25 lg:px-0">
-        <p
-            class="font-baybayinsisil text-20 md:text-24 text-yellow"
-        >
-            {{ page.speaker_subtitle }}
-        </p>
-        <h2 class="font-medium text-48 md:text-80 text-white mb-20">
-            {{ page.speaker_title }}
-        </h2>
-        <h3 class="text-24 md:text-32 text-white mb-50">
-            Discover our speakers for PyCon Philippines 2024
-        </h3>
-    </div>
-    <div class="">
-      <div class="splide slider2">
-        <div class="splide__track">
-          <ul class="splide__list">
-            {% for speaker in page.speakers.all %}
-            <li class="splide__slide">
-
-              {% image speaker.display_photo original fill-1000x1000 %}
-              <p
-                  class="text-center text-32 text-white mb-10 pt-20"
-                  >
-                  {{ speaker.full_name }}
+<div class="max-w-full mx-auto min-h-[800px] py-[80px]" id="speakers">
+  <div class="max-w-975 mx-auto px-25 lg:px-0">
+    <p class="font-baybayinsisil text-20 md:text-24">
+      {{ page.speaker_subtitle }}
+    </p>
+    <h1
+      class="content-title text-5xl md:text-7xl font-medium mb-5 text-center text-black"
+    >
+      {{ page.speaker_title }}
+    </h1>
+    <h2
+      class="content-subtitle italic text-2xl md:text-3xl text-center text-black font-medium mb-2"
+    >
+      Discover our speakers for PyCon Philippines 2024
+    </h2>
+  </div>
+  <div class="container mx-auto mt-20">
+    <div class="splide slider1">
+      <div class="splide__track">
+        <ul class="splide__list grid-container">
+          {% for speaker in page.speakers.all %}
+          <li class="splide__slide grid-item">
+            {% image speaker.display_photo original fill-1000x1000 %}
+            <div class="mt-5">
+              <p class="text-left text-32 text-black">
+                {{ speaker.full_name }}
               </p>
-              <p
-                  class="text-center text-24 text-white-80"
-                  >
-                  {{ speaker.description }}
+              <p class="text-left text-24 text-black">
+                {{ speaker.description }}
               </p>
-              <p
-                  class="speakers-desc text-center text-16 text-white-80"
-                  >
-                  {{ speaker.introduction }}
+              <p class="desc text-left text-16 text-black">
+                {{ speaker.introduction }}
               </p>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
-
-    <div class="absolute right-90 -top-102 hidden md:block">
-        <img
-            class="star"
-            src="{% static 'img/constellation-7.svg' %}"
-            alt="constellation"
-        />
-    </div>
+  </div>
 </div>
+<div class="bamboo-divider max-w-full h-10"></div>
