@@ -4,7 +4,7 @@
 @font-face {
     font-family: 'Maragsa';
     src: url('../fonts/Maragsa/Maragsa-Display.woff2') format('woff2'),
-         url('../fonts/Maragsa/Maragsa-Display.woff') format('woff');
+        url('../fonts/Maragsa/Maragsa-Display.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -44,9 +44,17 @@ body {
     background-repeat: no-repeat;
 }
 
-.bg-bamboo-1{
+.bg-bamboo-1 {
     background-image: url(../img/bg/bamboo-background-mask.png) !important;
     background-color: #3D521E;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-bamboo-2 {
+    background-image: url(../img/bg/bamboo-background-mask-1.png) !important;
+    background-color: #FFA602;
     background-position: 50% 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,8 +63,8 @@ body {
 /* Components */
 
 .separator {
-  border-left: 1px text-4xl font-bold text-gray-900 solid #ccc;
-  opacity: 30%;
+    border-left: 1px text-4xl font-bold text-gray-900 solid #ccc;
+    opacity: 30%;
 }
 
 .social-icon {
@@ -97,13 +105,14 @@ body {
 }
 
 .border-bamboo {
-    border-color: #a66f3f; /* Bamboo-like color */
+    border-color: #a66f3f;
+    /* Bamboo-like color */
     border-style: double;
     border-width: 4px;
 }
 
 .content-title {
-  font-family: 'Maragsa', sans-serif;
+    font-family: 'Maragsa', sans-serif;
 }
 
 .sponsor-type {
@@ -117,30 +126,32 @@ body {
 }
 
 /* What to expect section */
-.yellow-python{
+.yellow-python {
     bottom: 0;
     right: 0;
 }
 
 
-.what-to-expect{
+.what-to-expect {
     width: 990px;
     height: 469px;
 }
 
 @media screen and (max-width: 768px) {
-  .sponsor-type {
-    border-right: 0px;
-  }
+    .sponsor-type {
+        border-right: 0px;
+    }
 }
 
 /* Venue section */
 .event-venue-box {
     color: white;
 }
+
 .event-venue-box .pycon-header {
     line-height: 1.2;
 }
+
 .venue-subheader {
     font-family: Noto Sans;
     font-size: 32px;
@@ -159,16 +170,150 @@ body {
 A better version of the "Get ticket" button on the home page with the hover effect
 */
 .btn-action.custom-btn {
-  padding-left:5rem;
-  padding-right:5rem;
-  padding-top:2rem;
-  padding-bottom:2rem;
-  font-size:1.300rem;
-  line-height:1.75rem;
-  font-weight:1000;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.300rem;
+    line-height: 1.75rem;
+    font-weight: 1000;
 }
 
 .btn-action:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+/* Container for the slider */
+.splide {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.splide__list .text-32 {
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 27.24px;
+    text-align: left;
+}
+
+/* Track for horizontal scrolling */
+.splide__track {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: auto;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* Slides List */
+.splide__list {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Slide */
+.splide__slide {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.splide__slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 4px solid black;
+    box-shadow: 0 0 0 8px white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.splide__slide img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px #FFA602;
+}
+
+.splide__slide p {
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.splide__slide .text-24 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+    max-width: 100%;
+}
+
+.splide__track::-webkit-scrollbar {
+    height: 10px;
+}
+
+.splide__track::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.splide__track::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.splide__track::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Container styling */
+.grid-container {
+    display: grid;
+    /* Use CSS Grid for layout */
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 speakers per row */
+    gap: 20px;
+    /* Space between grid items */
+    padding: 20px;
+    /* Optional padding */
+    list-style: none;
+    /* Remove default list styling */
+    margin: 0;
+}
+
+/* Each speaker slide */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 speakers per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 speakers per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* 1 speaker per row on extra small screens */
+    }
 }
