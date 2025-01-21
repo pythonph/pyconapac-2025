@@ -1,18 +1,14 @@
 {% load static %} {% load wagtailimages_tags %}
 
-<div class="max-w-full mx-auto min-h-[800px] py-[80px]" id="speakers">
+<div class="max-w-full mx-auto min-h-[800px] py-[80px] text-center" id="speakers">
   <div class="max-w-975 mx-auto px-25 lg:px-0">
     <p class="font-baybayinsisil text-20 md:text-24">
       {{ page.speaker_subtitle }}
     </p>
-    <h1
-      class="content-title text-5xl md:text-7xl font-medium mb-5 text-center text-black"
-    >
+    <h2 class="pycon-header text-5xl md:text-7xl my-4">
       {{ page.speaker_title }}
-    </h1>
-    <h2
-      class="content-subtitle italic text-2xl md:text-3xl text-center text-black font-medium mb-2"
-    >
+    </h2>
+    <h2 class="pycon-subheader mx-auto my-6">
       Discover our speakers for PyCon Philippines 2024
     </h2>
   </div>
@@ -24,13 +20,13 @@
           <li class="splide__slide grid-item">
             {% image speaker.display_photo original fill-1000x1000 %}
             <div class="mt-5">
-              <p class="text-left text-32 text-black">
+              <p class="text-left text-32">
                 {{ speaker.full_name }}
               </p>
-              <p class="text-left text-24 text-black">
+              <p class="text-left text-24">
                 {{ speaker.description }}
               </p>
-              <p class="desc text-left text-16 text-black">
+              <p class="desc text-left text-16">
                 {{ speaker.introduction }}
               </p>
             </div>
