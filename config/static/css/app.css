@@ -1626,6 +1626,11 @@ video {
   color: rgb(255 149 0 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#61491B\] {
+  --tw-text-opacity: 1;
+  color: rgb(97 73 27 / var(--tw-text-opacity, 1));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1983,6 +1988,14 @@ video {
   .md\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+  }
+
+  .md\:overflow-auto {
+    overflow: auto;
+  }
+
+  .md\:overflow-x-visible {
+    overflow-x: visible;
   }
 
   .md\:border-0 {
