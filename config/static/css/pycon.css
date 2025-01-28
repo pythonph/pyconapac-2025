@@ -317,3 +317,13 @@ A better version of the "Get ticket" button on the home page with the hover effe
         /* 1 speaker per row on extra small screens */
     }
 }
+
+/* start Sponsors */
+.sponsor-info {
+    display: none;
+}
+
+.tippy-content a {
+    text-decoration: underline !important;
+}
+/* end Sponsors */

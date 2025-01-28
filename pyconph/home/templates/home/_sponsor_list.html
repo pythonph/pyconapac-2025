@@ -1,23 +1,63 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 <div class="mx-auto max-w-5xl my-24">
-  <h2 class="pycon-header text-5xl md:text-6xl my-4">Special Thanks to Our Sponsors</h2>
-  <h3 class="text-xl">This event was made possible with the help of our generous sponsors</h3>
+  <h2 class="pycon-header text-5xl md:text-6xl my-4">
+    Special Thanks to Our Sponsors
+  </h2>
+  <h3 class="text-xl">
+    This event was made possible with the help of our generous sponsors
+  </h3>
 
   <div class="pt-8">
-  {% for sponsor_type in page.sponsor_types %}
-    <div class="flex lg:flex-row flex-col border-t border-solid border-[#d9d8c5] {% if forloop.last %}border-b{% endif %}">
-      <div class="sponsor-type lg:w-1/4 pr-8 mx-4 my-auto h-max">{{ sponsor_type }}</div>
+    {% for sponsor_type in page.sponsor_types %}
+    <div
+      class="flex lg:flex-row flex-col border-t border-solid border-[#d9d8c5] {% if forloop.last %}border-b{% endif %}"
+    >
+      <div class="sponsor-type lg:w-1/4 pr-8 mx-4 my-auto h-max">
+        {{ sponsor_type }}
+      </div>
 
       <div class="flex flex-column flex-wrap lg:w-3/4">
         {% for sponsor in sponsor_type.sponsors.all %}
-          <div class="flex items-center m-8 h-24">
+        <div class="flex flex-column flex-wrap lg:w-3/4">
+          <div
+            class="sponsor flex items-center m-8 h-24"
+            data-template="{{sponsor.name}}"
+          >
             <img src="{{ sponsor.logo.url }}" class="max-h-24 max-w-40" />
+            <div id="{{sponsor.name}}" class="sponsor-info">
+              {{sponsor.info}}
+              <br />
+              <br />
+              You can visit us at
+              <a href="{{sponsor.website_url}}" target="_blank"
+                >{{sponsor.name}}</a
+              >
+            </div>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
-  {% endfor %}
+    {% endfor %}
   </div>
 </div>
-
+<script>
+  (function (window, document) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        window.tippy(".sponsor", {
+          content(reference) {
+            const id = reference.getAttribute("data-template");
+            const template = document.getElementById(id);
+            return template.innerHTML;
+          },
+          allowHTML: true,
+          interactive: true,
+        });
+      },
+      false
+    );
+  })(window, document);
+</script>
