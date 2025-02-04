@@ -41,11 +41,39 @@ h4 {
     font-weight: 400;
     line-height: 43.58px;
 }
+
 </style>
 {% endblock %}
 
 {% block content %}
+{% if page.slug == 'schedule' %}
+<div class="max-w-7xl mx-auto">
+  <h2 class="text-5xl my-10 content-title">
+    {{ page.content_title }}
+  </h2>
+  {% if page.content_subtitle %}
+  <h2 class="mb-10 lg:mb-32">
+      {{ page.content_subtitle }}
+  </h2>
+  {% endif %}
+</div>
 
+<script type="text/javascript" src="https://pretalx.com/pycon-apac-2025/schedule/widget/v2.en.js"></script>
+<pretalx-schedule
+  event-url="https://pretalx.com/pycon-apac-2025/"
+  locale="en"
+  style="zoom:95%">
+</pretalx-schedule>
+<noscript>
+   <div class="pretalx-widget">
+        <div class="pretalx-widget-info-message">
+            JavaScript is disabled in your browser. To access our schedule without JavaScript,
+            please <a target="_blank" href="https://pretalx.com/pycon-apac-2025/schedule/">
+              click here</a>.
+        </div>
+    </div>
+</noscript>
+{% else %}
 <div class="max-w-3xl mx-auto">
     <div class="mb-24">
         <h2 class="text-5xl my-10 content-title">
@@ -61,6 +89,8 @@ h4 {
         </div>
   </div>
 </div>
+{% endif %}
+
 {% endblock content %}
 
 {% block footer %}
