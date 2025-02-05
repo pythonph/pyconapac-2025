@@ -18,8 +18,8 @@
       </div>
 
       <div class="flex flex-column flex-wrap lg:w-3/4">
-        {% for sponsor in sponsor_type.sponsors.all %}
         <div class="flex flex-column flex-wrap lg:w-3/4">
+        {% for sponsor in sponsor_type.sponsors.all %}
           <div
             class="sponsor flex items-center m-8 h-24"
             data-template="{{sponsor.name}}"
@@ -35,8 +35,8 @@
               >
             </div>
           </div>
-        </div>
         {% endfor %}
+        </div>
       </div>
     </div>
     {% endfor %}
