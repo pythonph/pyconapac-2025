@@ -1,3 +1,5 @@
+import os
+
 from django.db import models
 from django.db.models import Count
 from django.utils.text import slugify
@@ -11,6 +13,8 @@ from pyconph.presentations.models import Schedule, Speaker
 from pyconph.sponsors.models import Sponsor, SponsorType
 from django.utils import timezone
 from datetime import datetime
+
+from ..services.pretalx import PretalxService
 
 
 class PageContent(Orderable, models.Model):
@@ -194,16 +198,46 @@ class HomePage(Page):
         )
 
     def keynote_speakers(self):
-        return Speaker.objects.filter(
-            is_featured=True,
-            keynotespeaker_home__page=self,
-        ).order_by("keynotespeaker_home")
+        api_token = os.getenv('PRETALX_API_TOKEN')
+        base_url = os.getenv('PRETALX_BASE_URL', 'https://pretalx.com')
+        slug = os.getenv('PRETALX_SLUG', 'pycon-apac-2025')
+
+        if not api_token:
+            return
+
+        service = PretalxService(
+            base_url=base_url,
+            api_token=api_token
+        )
+        speakers = []
+        talks = service.get_talks(slug).get('results', [])
+        for talk in talks:
+            if '[Keynote]' not in talk['title']:
+                continue
+            for speaker in talk['speakers']:
+                speakers.append(speaker)
+        return speakers
 
     def speakers(self):
-        return Speaker.objects.filter(
-            is_featured=True,
-            speaker_home__page=self,
-        ).order_by("speaker_home__sort_order")
+        api_token = os.getenv('PRETALX_API_TOKEN')
+        base_url = os.getenv('PRETALX_BASE_URL', 'https://pretalx.com')
+        slug = os.getenv('PRETALX_SLUG', 'pycon-apac-2025')
+
+        if not api_token:
+            return
+
+        service = PretalxService(
+            base_url=base_url,
+            api_token=api_token
+        )
+        speakers = []
+        talks = service.get_talks(slug).get('results', [])
+        for talk in talks:
+            if '[Keynote]' in talk['title']:
+                continue
+            for speaker in talk['speakers']:
+                speakers.append(speaker)
+        return speakers
 
     def day1_events(self):
         return Schedule.objects.filter(
