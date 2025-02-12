@@ -23,6 +23,11 @@ class PretalxService:
         response = requests.get(url, headers=self.headers)
         return response.json() if response.ok else response.raise_for_status()
 
+    def get_talks(self, event_slug: str):
+        url = f"{self.base_url}/api/events/{event_slug}/talks?limit=999&state=confirmed"
+        response = requests.get(url, headers=self.headers)
+        return response.json() if response.ok else response.raise_for_status()
+
     def update_submission(self, event_slug: str, submission_id: str, data: dict):
         response = requests.patch(url, json=data, headers=self.headers)
         return response.json() if response.ok else response.raise_for_status()

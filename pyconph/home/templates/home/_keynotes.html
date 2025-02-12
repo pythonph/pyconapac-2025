@@ -14,7 +14,7 @@
     <h2
       class="content-subtitle italic text-2xl md:text-3xl text-center font-medium mb-2"
     >
-      Discover our keynote speakers for PyCon Philippines 2024
+      Discover our keynote speakers for PyCon APAC 2025
     </h2>
   </div>
 
@@ -22,19 +22,18 @@
     <div class="splide slider1">
       <div class="splide__track">
         <ul class="splide__list">
-          {% for speaker in page.keynote_speakers.all %}
+          {% for speaker in page.keynote_speakers %}
           <li class="splide__slide">
-            {% image speaker.display_photo original fill-1000x1000 %}
-            <div class="mt-5">
-              <p class="text-left text-32 text-black">
-                {{ speaker.full_name }}
-              </p>
-              <p class="text-left text-24 text-black">
-                {{ speaker.description }}
-              </p>
-              <p class="desc text-left text-16 text-black">
-                {{ speaker.introduction }}
-              </p>
+            <a href="https://pretalx.com/pycon-apac-2025/speaker/{{ speaker.code }}" class="text-left text-32 text-black">
+              {% if speaker.avatar %}
+                <img src="{{ speaker.avatar }}" />
+              {% else %}
+                <img src="https://pretalx.com/pycon-apac-2025/speaker/avatar.svg" />
+              {% endif %}
+            </a>
+            <div class="mt-5 mx-auto">
+              <p class="text-32 text-black">
+                {{ speaker.name }}
             </div>
           </li>
           {% endfor %}
