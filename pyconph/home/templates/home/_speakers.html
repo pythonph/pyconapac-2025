@@ -18,14 +18,16 @@
         <ul class="splide__list grid-container">
           {% for speaker in page.speakers %}
           <li class="splide__slide grid-item">
-            {% if speaker.avatar %}
-              <img src="{{ speaker.avatar }}" />
-            {% else %}
-              <img src="https://pretalx.com/pycon-apac-2025/speaker/avatar.svg" />
-            {% endif %}
+            <a href="https://pretalx.com/pycon-apac-2025/speaker/{{ speaker.code }}" class="text-left text-32 text-black">
+              {% if speaker.avatar %}
+                <img src="{{ speaker.avatar }}" />
+              {% else %}
+                <img src="https://pretalx.com/pycon-apac-2025/speaker/avatar.svg" />
+              {% endif %}
+            </a>
             <div class="mt-5 mx-auto">
-              <p class="text-left text-32">
-              {{ speaker.name }}
+              <p class="text-32">
+                {{ speaker.name }}
               </p>
             </div>
           </li>

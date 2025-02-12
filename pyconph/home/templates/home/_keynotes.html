@@ -24,10 +24,15 @@
         <ul class="splide__list">
           {% for speaker in page.keynote_speakers %}
           <li class="splide__slide">
-            {% image speaker.display_photo original fill-1000x1000 %}
-            <img src="{{ speaker.avatar }}">
+            <a href="https://pretalx.com/pycon-apac-2025/speaker/{{ speaker.code }}" class="text-left text-32 text-black">
+              {% if speaker.avatar %}
+                <img src="{{ speaker.avatar }}" />
+              {% else %}
+                <img src="https://pretalx.com/pycon-apac-2025/speaker/avatar.svg" />
+              {% endif %}
+            </a>
             <div class="mt-5 mx-auto">
-              <p class="text-left text-32 text-black">
+              <p class="text-32 text-black">
                 {{ speaker.name }}
             </div>
           </li>
