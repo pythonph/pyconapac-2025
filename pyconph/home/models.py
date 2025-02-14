@@ -1,5 +1,6 @@
 import os
 
+from django.core.cache import cache
 from django.db import models
 from django.db.models import Count
 from django.utils.text import slugify
@@ -9,7 +10,7 @@ from wagtail.fields import RichTextField
 from wagtail.models import Orderable, Page
 from wagtail.snippets.models import register_snippet
 
-from pyconph.presentations.models import Schedule, Speaker
+from pyconph.presentations.models import Schedule
 from pyconph.sponsors.models import Sponsor, SponsorType
 from django.utils import timezone
 from datetime import datetime
@@ -197,7 +198,12 @@ class HomePage(Page):
             "Practices",
         )
 
+    @property
     def keynote_speakers(self):
+        keynotes = cache.get('keynotes')
+        if keynotes:
+            return keynotes
+
         api_token = os.getenv('PRETALX_API_TOKEN')
         base_url = os.getenv('PRETALX_BASE_URL', 'https://pretalx.com')
         slug = os.getenv('PRETALX_SLUG', 'pycon-apac-2025')
@@ -216,13 +222,20 @@ class HomePage(Page):
                 continue
             for speaker in talk['speakers']:
                 speakers.append(speaker)
+
+        cache.set('keynotes', speakers, 43200)
         return speakers
 
+    @property
     def speakers(self):
+        speakers = cache.get('speakers')
+        if speakers:
+            return speakers
+
         api_token = os.getenv('PRETALX_API_TOKEN')
         base_url = os.getenv('PRETALX_BASE_URL', 'https://pretalx.com')
         slug = os.getenv('PRETALX_SLUG', 'pycon-apac-2025')
-
+ 
         if not api_token:
             return
 
@@ -237,6 +250,8 @@ class HomePage(Page):
                 continue
             for speaker in talk['speakers']:
                 speakers.append(speaker)
+
+        cache.set('speakers', speakers, 43200)
         return speakers
 
     def day1_events(self):
