@@ -21,7 +21,7 @@
   <div class="container mx-auto mt-20">
     <div class="splide slider1">
       <div class="splide__track">
-        <ul class="splide__list">
+        <ul class="splide__list flex flex-col md:flex-row">
           {% for speaker in page.keynote_speakers %}
           <li class="splide__slide">
             <a href="https://pretalx.com/pycon-apac-2025/speaker/{{ speaker.code }}" class="text-left text-32 text-black">
