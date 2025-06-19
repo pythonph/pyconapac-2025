@@ -1,19 +1,21 @@
 import os
+from datetime import datetime
 
 from django.core.cache import cache
 from django.db import models
 from django.db.models import Count
+from django.utils import timezone
 from django.utils.text import slugify
 from modelcluster.fields import ParentalKey
-from wagtail.admin.panels import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
+from requests import exceptions
+from wagtail.admin.panels import (FieldPanel, FieldRowPanel, InlinePanel,
+                                  MultiFieldPanel)
 from wagtail.fields import RichTextField
 from wagtail.models import Orderable, Page
 from wagtail.snippets.models import register_snippet
 
 from pyconph.presentations.models import Schedule
 from pyconph.sponsors.models import Sponsor, SponsorType
-from django.utils import timezone
-from datetime import datetime
 
 from ..services.pretalx import PretalxService
 
@@ -216,14 +218,18 @@ class HomePage(Page):
             api_token=api_token
         )
         speakers = []
-        talks = service.get_talks(slug).get('results', [])
-        for talk in talks:
-            if '[Keynote]' not in talk['title']:
-                continue
-            for speaker in talk['speakers']:
-                speakers.append(speaker)
+        try:
+            talks = service.get_talks(slug).get('results', [])
+            for talk in talks:
+                if '[Keynote]' not in talk['title']:
+                    continue
+                for speaker in talk['speakers']:
+                    speakers.append(speaker)
 
-        cache.set('keynotes', speakers, 43200)
+            cache.set('keynotes', speakers, 43200)
+        except exceptions.HTTPError:
+            pass
+
         return speakers
 
     @property
@@ -244,14 +250,17 @@ class HomePage(Page):
             api_token=api_token
         )
         speakers = []
-        talks = service.get_talks(slug).get('results', [])
-        for talk in talks:
-            if '[Keynote]' in talk['title']:
-                continue
-            for speaker in talk['speakers']:
-                speakers.append(speaker)
+        try:
+            talks = service.get_talks(slug).get('results', [])
+            for talk in talks:
+                if '[Keynote]' in talk['title']:
+                    continue
+                for speaker in talk['speakers']:
+                    speakers.append(speaker)
 
-        cache.set('speakers', speakers, 43200)
+            cache.set('speakers', speakers, 43200)
+        except exceptions.HTTPError:
+            pass
         return speakers
 
     def day1_events(self):
